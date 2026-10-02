@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-validator="${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py"
+validator="${SKILL_VALIDATOR:-${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-creator/scripts/quick_validate.py}"
 
 if [[ ! -f "$validator" ]]; then
   echo "Skill validator not found: $validator" >&2

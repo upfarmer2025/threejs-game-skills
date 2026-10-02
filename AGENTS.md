@@ -4,6 +4,13 @@ This repo contains agent workflow assets for Three.js browser-game development. 
 
 ## Default Technical Stack
 
+For standalone reference-faithful Blender characters, route directly to
+`skills/blender-character-fidelity/SKILL.md`. Use its project AGENTS template, locked
+character spec, staged modeling, matched cameras and identity evidence gates. The
+playable-loop, browser and external-generation gates below apply when a Three.js game
+is in scope; standalone Blender work does not require paid generators or game audio.
+When a character enters a game, run both the identity gate and the existing game QA.
+
 - Prefer TypeScript, Vite, npm package imports, and Three.js modules; use `three/addons/...` for official controls, loaders, and post-processing helpers.
 - Physics: simple custom collision for arcade triggers; Rapier as the default robust engine; `cannon-es` only as a lightweight JS fallback. Load `skills/threejs-gameplay-systems/references/physics-engine-selection.md` before adding or changing physics-heavy gameplay.
 - Use `lil-gui` for local tuning and a lightweight HUD or `stats.js` for frame diagnostics when performance is in scope.

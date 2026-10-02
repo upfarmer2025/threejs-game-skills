@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blender Character Fidelity"
+  short_description: "Reference-locked character modeling with evidence gates"
+  default_prompt: "Use $blender-character-fidelity to model this character in Blender with locked identity, matched cameras, staged reviews, and measured evidence."

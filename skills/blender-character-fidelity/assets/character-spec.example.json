@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "character_id": "example-character",
+  "status": "draft",
+  "style": "REPLACE: preserve the source anatomy, age cues and rendering style; no beautification",
+  "coordinates": {
+    "unit": "m",
+    "up": "+Z",
+    "front": "-Y",
+    "image_origin": "top-left"
+  },
+  "sources": [
+    {
+      "id": "original-front",
+      "path": "references/original/front.png",
+      "sha256": null,
+      "kind": "original",
+      "view": "front",
+      "notes": "REPLACE: original source, source/crop provenance and camera uncertainty"
+    }
+  ],
+  "locks": [
+    {
+      "id": "face-identity",
+      "category": "face",
+      "description": "REPLACE: jaw taper, cheek width, eye tilt and chin/profile from source",
+      "source_ids": [
+        "original-front"
+      ],
+      "certainty": "observed",
+      "critical": true,
+      "decision": null
+    },
+    {
+      "id": "body-identity",
+      "category": "body",
+      "description": "REPLACE: measured head/body and shoulder/hip/leg proportions",
+      "source_ids": [
+        "original-front"
+      ],
+      "certainty": "observed",
+      "critical": true,
+      "decision": null
+    },
+    {
+      "id": "hair-identity",
+      "category": "hair",
+      "description": "REPLACE: hairline, bang split, crown, side/back masses and asymmetry",
+      "source_ids": [
+        "original-front"
+      ],
+      "certainty": "observed",
+      "critical": true,
+      "decision": null
+    },
+    {
+      "id": "outfit-identity",
+      "category": "outfit",
+      "description": "REPLACE: neckline, garment layers, seams, hem and main colors",
+      "source_ids": [
+        "original-front"
+      ],
+      "certainty": "observed",
+      "critical": true,
+      "decision": null
+    },
+    {
+      "id": "accessories-identity",
+      "category": "accessories",
+      "description": "REPLACE: exact accessories, anatomical side and attachment; lock absence if none",
+      "source_ids": [
+        "original-front"
+      ],
+      "certainty": "observed",
+      "critical": true,
+      "decision": null
+    }
+  ],
+  "proportions": {
+    "working_height_m": 1.65,
+    "head_units": 7.0,
+    "notes": "ILLUSTRATIVE ONLY: replace ratios from evidence; working height is assumed unless scale is known"
+  },
+  "review": {
+    "scene": "REVIEW",
+    "collection": "CHARACTER",
+    "frame": 1,
+    "resolution": [
+      768,
+      1024
+    ],
+    "samples": 32,
+    "seed": 42,
+    "view_transform": "Standard",
+    "views": [
+      {
+        "id": "front",
+        "camera": "CAM_front",
+        "role": "full",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "side",
+        "camera": "CAM_side",
+        "role": "full",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "back",
+        "camera": "CAM_back",
+        "role": "full",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "front_three_quarter",
+        "camera": "CAM_front_three_quarter",
+        "role": "full",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "back_three_quarter",
+        "camera": "CAM_back_three_quarter",
+        "role": "full",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "face_front",
+        "camera": "CAM_face_front",
+        "role": "face",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "face_side",
+        "camera": "CAM_face_side",
+        "role": "face",
+        "projection": "ORTHO"
+      },
+      {
+        "id": "face_three_quarter",
+        "camera": "CAM_face_three_quarter",
+        "role": "face",
+        "projection": "ORTHO"
+      }
+    ],
+    "landmarks": {
+      "head_top": "LM_head_top",
+      "chin": "LM_chin",
+      "jaw_left": "LM_jaw_left",
+      "jaw_right": "LM_jaw_right",
+      "sole": "LM_sole",
+      "shoulder_left": "LM_shoulder_left",
+      "shoulder_right": "LM_shoulder_right"
+    }
+  },
+  "measurements": [
+    {
+      "id": "face-landmarks",
+      "category": "face",
+      "kind": "landmarks",
+      "source_id": "original-front",
+      "view": "face_front",
+      "targets": {
+        "head_top": [
+          0.5,
+          0.15
+        ],
+        "chin": [
+          0.5,
+          0.85
+        ],
+        "jaw_left": [
+          0.3,
+          0.65
+        ],
+        "jaw_right": [
+          0.7,
+          0.65
+        ]
+      },
+      "normalizer": 0.7,
+      "tolerance": 0.035,
+      "notes": "ILLUSTRATIVE ONLY: replace with visible source annotations at the face view crop; add source_match for perspective"
+    },
+    {
+      "id": "head-body-ratio",
+      "category": "body",
+      "kind": "ratio",
+      "source_id": "original-front",
+      "view": "front",
+      "points": [
+        "head_top",
+        "sole",
+        "head_top",
+        "chin"
+      ],
+      "target": 7.0,
+      "tolerance": 0.04,
+      "notes": "ILLUSTRATIVE ONLY: anatomical head top excludes hair, sole at ground; annotate from matching source pose"
+    }
+  ],
+  "quality": {
+    "weights": {
+      "face": 0.35,
+      "body": 0.25,
+      "hair": 0.2,
+      "outfit": 0.15,
+      "accessories": 0.05
+    },
+    "category_floor": 85,
+    "overall_floor": 90,
+    "max_iterations": 4,
+    "plateau_rounds": 2,
+    "plateau_delta": 1.0
+  }
+}

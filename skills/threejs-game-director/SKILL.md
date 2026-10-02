@@ -73,6 +73,8 @@ Compaction rule: report every row that has meaningful state (yes/no/blocked/done
 
 ## Phase Routing
 
+- `blender-character-fidelity`: reference-faithful Blender characters, face/body/hair/outfit/accessory identity locks, staged modeling, camera matching and measured review loops. Use before game import when likeness matters; retain the normal game QA and external sourcing ledger for the surrounding game. Standalone Blender character requests route directly to this skill without game-only gates.
+
 - `threejs-gameplay-systems`: design brief, core loop contract, level/encounter plan, first playable slice, architecture, mechanics, entities, input, camera, physics selection, game feel.
 - External asset sourcing: credential probe, generator skill loading, source decision per surface, task IDs/output files or blocker evidence. Must complete before the graphics phase is `done` for premium work.
 - `threejs-aaa-graphics-builder`: basic-looking screenshots, asset architecture, models, materials, technical art, shaders, VFX, lighting/render, visual scorecard.

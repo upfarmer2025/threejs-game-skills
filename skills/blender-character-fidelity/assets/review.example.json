@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "manifest_sha256": null,
+  "builder": {
+    "reviewer": "",
+    "inspected_views": [],
+    "categories": {
+      "face": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "body": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "hair": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "outfit": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "accessories": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      }
+    },
+    "locks": {
+      "face-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "body-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "hair-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "outfit-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "accessories-identity": {
+        "pass": false,
+        "reason": ""
+      }
+    },
+    "hard_failures": []
+  },
+  "fresh_eyes": {
+    "reviewer": "",
+    "inspected_views": [],
+    "categories": {
+      "face": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "body": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "hair": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "outfit": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      },
+      "accessories": {
+        "score": null,
+        "reason": "",
+        "evidence": []
+      }
+    },
+    "locks": {
+      "face-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "body-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "hair-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "outfit-identity": {
+        "pass": false,
+        "reason": ""
+      },
+      "accessories-identity": {
+        "pass": false,
+        "reason": ""
+      }
+    },
+    "hard_failures": [],
+    "mode": "independent"
+  }
+}
