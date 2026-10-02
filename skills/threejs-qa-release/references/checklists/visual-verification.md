@@ -1,5 +1,7 @@
 # Visual Verification Checklist
 
+- For reference-faithful Blender character imports, retain the `blender-character-fidelity` spec and identity review evidence; verify the exported appearance again in engine. Its identity gate does not replace the browser/game checks below.
+
 - Open the local dev or preview URL in a browser.
 - Check browser console errors and page errors.
 - Confirm the canvas has nonzero display size and drawing-buffer size.

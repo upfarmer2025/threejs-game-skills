@@ -21,13 +21,13 @@ Created by [Majid Manzarpour](https://x.com/majidmanzarpour).
 Install all skills for Codex:
 
 ```bash
-npx skills add majidmanzarpour/threejs-game-skills --skill '*' -a codex -g -y
+npx skills add upfarmer2025/threejs-game-skills --skill '*' -a codex -g -y
 ```
 
 Install all skills for Claude Code:
 
 ```bash
-npx skills add majidmanzarpour/threejs-game-skills --skill '*' -a claude-code -g -y
+npx skills add upfarmer2025/threejs-game-skills --skill '*' -a claude-code -g -y
 ```
 
 If your installed `skills` CLI does not support one of these targets, install from a cloned checkout instead: `./install.sh --codex` for Codex, `./install.sh --claude` for Claude Code, or `./install.sh --all` for both.
@@ -136,6 +136,8 @@ Provider notes:
 
 ## Best Entry Points
 
+- Use `blender-character-fidelity` for reference-faithful Blender characters: locked face/body/hair/outfit/accessories, character-spec JSON, three/five-view references, staged modeling, camera matching, neutral captures, measured identity proxies and fresh-eyes correction loops.
+
 - Use `threejs-game-director` for complete games, major upgrades, premium polish, release-ready work, or anything broad.
 - Use `threejs-gameplay-systems` for mechanics, architecture, input, camera, physics, scoring, objectives, and game feel.
 - Use `threejs-aaa-graphics-builder` when screenshots look basic or the game needs stronger models, materials, lighting, VFX, world detail, or render polish.
@@ -208,6 +210,7 @@ Premium/AAA claims should not rely on a static scene, placeholder cubes, generic
 
 ## Skill System
 
+- `blender-character-fidelity`: reference-locked Blender character modeling, camera matching, neutral multiview captures, identity evidence and prioritized correction loops.
 - `threejs-game-director`: main entrypoint for complete game builds and orchestration — runner capability check, skill path ladder, phase playbook, ledgers, report audit.
 - `threejs-gameplay-systems`: playable loop, architecture, game design and level design, mechanics, entities, controls, camera, physics selection, and game feel (hitstop, screenshake, easing, impact feedback).
 - `threejs-aaa-graphics-builder`: visual scorecard with calibration anchors, technical art budgets, shader/material cookbook, asset architecture, models, materials, VFX, render polish.
@@ -230,6 +233,35 @@ Installed skills are self-contained. They do not depend on root docs, root scaff
 - `install.sh`: local installer for working on this checkout.
 
 ## Maintainer Checks
+
+For standalone Blender character work, install this fork's new skill:
+
+```bash
+npx skills add upfarmer2025/threejs-game-skills --skill blender-character-fidelity -a codex -g -y
+```
+
+Then ask: `Use blender-character-fidelity to reconstruct this character from the supplied
+references. Preserve the face, proportions, hair, outfit and signature accessories;
+produce a locked spec, consistent turnaround, staged Blender checkpoints and complete
+identity evidence. Keep inferred unseen details explicit.`
+
+The self-contained package includes the project [AGENTS template](skills/blender-character-fidelity/assets/AGENTS.md),
+[spec example](skills/blender-character-fidelity/assets/character-spec.example.json),
+[data contract](skills/blender-character-fidelity/references/character-contract.md),
+[identity rubric](skills/blender-character-fidelity/references/identity-scorecard.md),
+and three helpers: spec validation, headless review rendering, and evidence/scoring.
+It does not auto-generate faithful anatomy or replace visual review. Blender 4.2+ is the
+target runtime; verify the installed version with a smoke capture. Python 3.10+ runs the
+contract tests without Blender; Pillow is optional for silhouette IoU. A complete game
+still needs the existing Three.js QA gates.
+
+```bash
+npm run test:character
+```
+
+These are synthetic gate tests, not a likeness evaluation or Blender render test.
+If the skill validator lives elsewhere, set `SKILL_VALIDATOR` to its absolute path
+when running `npm run validate:skills`.
 
 Validate this workflow repository:
 

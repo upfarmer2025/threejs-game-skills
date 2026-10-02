@@ -138,6 +138,11 @@ python3 <this-skill-dir>/scripts/threejs_3d_asset.py character-pipeline \
 
 ## Three.js Image Generator Pairing
 
+When a character must preserve a particular reference identity, load sibling
+`blender-character-fidelity/SKILL.md` for the identity contract and Blender correction
+loop. A generated base mesh or successful rig check does not establish likeness. Keep
+that skill's original-reference, camera and score evidence through the game handoff.
+
 Use `threejs-image-generator` before 3D generation when the asset benefits from a strong 2D reference:
 
 - Character concept, full-body T-pose/A-pose, front/side/back variants.
